@@ -15,8 +15,9 @@ class _CreateTaskPage extends State<CreateTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Container(
+        body: SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Container(
           margin: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -118,6 +119,6 @@ class _CreateTaskPage extends State<CreateTaskPage> {
               )
             ],
           )),
-    );
+    ));
   }
 }
