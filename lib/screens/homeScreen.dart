@@ -80,6 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ])
         ],
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     setState(() { 
+      //       currentPage = DrawerSections.new_task;
+      //     });
+      //   },
+      //   backgroundColor: Color(0xFF476EBE),
+      //   child: Icon(Icons.add),
+      // ),
       body: container,
       drawer: Drawer(
           child: SingleChildScrollView(
