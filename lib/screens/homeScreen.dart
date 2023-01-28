@@ -23,11 +23,62 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: currentPage == DrawerSections.new_task
+          ? null
+          : FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  currentPage = DrawerSections.new_task;
+                });
+              },
+              backgroundColor: Color(0xFF476EBE),
+              child: Icon(Icons.add),
+            ),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("ToDo",style: TextStyle(color: Color(0xFF476EBE)),),
+        title: Text(
+          "ToDo",
+          style: TextStyle(color: Color(0xFF476EBE)),
+        ),
         centerTitle: true,
         elevation: 0,
+        actions: [
+          PopupMenuButton(
+              itemBuilder: (context) => [
+                    PopupMenuItem(
+                        child: Row(
+                      children: [
+                        Icon(Icons.person),
+                        // Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
+                        PopupMenuItem(child: Text("Profile")),
+                      ],
+                    )),
+                    PopupMenuItem(
+                        child: Row(
+                      children: [
+                        Icon(Icons.dark_mode),
+                        // Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
+                        PopupMenuItem(child: Text("Dark mode")),
+                      ],
+                    )),
+                    PopupMenuItem(
+                        child: Row(
+                      children: [
+                        Icon(Icons.settings),
+                        // Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
+                        PopupMenuItem(child: Text("Settings")),
+                      ],
+                    )),
+                    PopupMenuItem(
+                        child: Row(
+                      children: [
+                        Icon(Icons.logout),
+                        // Padding(padding: EdgeInsets.symmetric(horizontal: 8)),
+                        PopupMenuItem(child: Text("Logout")),
+                      ],
+                    )),
+                  ])
+        ],
       ),
       body: container,
       drawer: Drawer(
@@ -98,8 +149,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ));
   }
 }
-
-
 
 enum DrawerSections {
   tasks,

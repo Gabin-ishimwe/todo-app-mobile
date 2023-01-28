@@ -16,31 +16,31 @@ class _CreateTaskPage extends State<CreateTaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 "Add New Task",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              TextField(
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              const TextField(
                 decoration: InputDecoration(
                     labelText: "Title", border: OutlineInputBorder()),
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              TextField(
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              const TextField(
                 decoration: InputDecoration(
                     labelText: "Description", border: OutlineInputBorder()),
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Task status",
                     style: TextStyle(fontSize: 16),
                   ),
@@ -55,8 +55,7 @@ class _CreateTaskPage extends State<CreateTaskPage> {
                           });
                         },
                       ),
-                      // Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
-                      Text(
+                      const Text(
                         "Completed",
                         style: TextStyle(
                           fontSize: 16,
@@ -75,8 +74,7 @@ class _CreateTaskPage extends State<CreateTaskPage> {
                           });
                         },
                       ),
-                      // Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
-                      Text(
+                      const Text(
                         "Not Completed",
                         style: TextStyle(
                           fontSize: 16,
@@ -86,12 +84,12 @@ class _CreateTaskPage extends State<CreateTaskPage> {
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Task priority",
                     style: TextStyle(fontSize: 16),
                   ),
@@ -106,16 +104,18 @@ class _CreateTaskPage extends State<CreateTaskPage> {
                     max: 5,
                     divisions: 5,
                     label: "$priority",
+                    thumbColor: Color(0xFF476EBE),
+                    activeColor: Color(0xFF476EBE),
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10)),
               ElevatedButton(
                 onPressed: () {},
-                child: Text("Add new task"),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.all(15),
-                ),
+                    padding: const EdgeInsets.all(15),
+                    backgroundColor: Color(0xFF476EBE)),
+                child: const Text("Add new task"),
               )
             ],
           )),
